@@ -18,11 +18,10 @@ function App() {
         data.append("file", file);
 
         let response = await uploadFile(data);
-        // console.log(response);
         setResult(response.path);
       }
     } 
-    getImage()
+    getImage();
   }, [file])
 
   
@@ -31,6 +30,7 @@ function App() {
   }
   
   console.log(file);
+  console.log(result);
 
   // const logo = 'https://i.pining.com/originals/16/46/24/1646243661201cc4b1a64fcbbacf.jpg';
 
@@ -47,7 +47,9 @@ function App() {
           style= {{display: 'none'}}
           onChange={(e) => setFile(e.target.files[0])}
         />
-        <a href={result} target="_blank" >{result}</a>
+        {/* <a href="#" target="_blank" rel="noopener noreferrer">{result}</a> */}
+        <a href={result} target="_blank" rel="noopener noreferrer">{result}</a>
+
       </div>
     </div>
   );
